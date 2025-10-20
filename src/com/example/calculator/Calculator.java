@@ -1,13 +1,15 @@
 package com.example.calculator;
 
 import java.io.Console;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Calculator {
     // 속
     private int num1,num2,result;
     private char op;
-    private Collection collection;
+    private static ArrayList<Integer> arrayList = new ArrayList<>();
 
     // 생
     public Calculator(int num1,int num2, char op){
@@ -40,14 +42,15 @@ public class Calculator {
                 break;
 
         }
-        // 3collection.add(result);
-        //System.out.println(collection);
+
+        arrayList.add(result);
+        // System.out.println(arrayList);
         return result;
 
     }
 
-    public void removeResult() {
-
+    public static void removeResult() { // 객체 생성 없이도 사용할 수 있도록 static
+        arrayList.remove(0);    // 가장 먼저 저장된 데이터를 삭제
     }
 
 }

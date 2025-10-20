@@ -19,7 +19,7 @@ import java.util.*;
 //        1. 계산된 결과 값들을 기록하는 컬렉션을 만든다.
 //        2. 컬렉션의 가장 먼저 저장된 데이터를 삭제하는 기능을 만든다.
 //        **Lv 3.**
-//        1. 양z의 정수만 받을 수 있었지만, 이제부터는 실수도 받을 수 있게 수정한다.
+//        1. 양의 정수만 받을 수 있었지만, 이제부터는 실수도 받을 수 있게 수정한다.
 //        2. 결과가 저장되어 있는 컬렉션을 조회하는 기능을 만든다.
 //        3. 그 때 특정 값보다 큰 결과 값을 출력할 수 있도록 한다.
 
@@ -44,12 +44,15 @@ public class App {
             result = cal.Calculate(num1, num2, op);
 
             System.out.println("Calcualtion Result: " + result);
-            System.out.print("Enter exit if you want to exit: ");
+            System.out.print("Enter exit if you want to exit / Enter remove if you want to remove the first saved result: ");
             String exit = sc.nextLine();
             // System.out.println("exit 변수의 값: [" + exit + "]");
 
             if(exit.equals("exit")){
                 break;
+            }
+            else if (exit.equals("remove")){
+                Calculator.removeResult();
             }
         }
 
